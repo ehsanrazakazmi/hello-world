@@ -11,13 +11,13 @@
         <div class="row gx-4">
           <div class="col-auto">
             <div class="avatar avatar-xl position-relative">
-              <img src="../assets/img/bruce-mars.jpg" alt="profile_image" class="w-100 border-radius-lg shadow-sm">
+              <img src="{{ asset('storage/'.Auth::user()->profile_photo_path) }}" alt="profile_image" class="w-100 border-radius-lg shadow-sm">
             </div>
           </div>
           <div class="col-auto my-auto">
             <div class="h-100">
               <h5 class="mb-1">
-                Shahbaz Ali
+                {{Auth::user()->name}}
               </h5>
               <p class="mb-0 font-weight-bold text-sm">
                 Admin / Co-Founder
@@ -165,10 +165,10 @@
               </p>
               <hr class="horizontal gray-light my-4">
               <ul class="list-group">
-                <li class="list-group-item border-0 ps-0 pt-0 text-sm"><strong class="text-dark">Full Name:</strong> &nbsp; Shahbaz Ali</li>
-                <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Mobile:</strong> &nbsp; (44) 123 1234 123</li>
-                <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Email:</strong> &nbsp; ali206@mail.com</li>
-                <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Location:</strong> &nbsp; USA</li>
+                <li class="list-group-item border-0 ps-0 pt-0 text-sm"><strong class="text-dark">Full Name:</strong> &nbsp;{{Auth::user()->name}}</li>
+                <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Email:</strong> &nbsp;  {{Auth::user()->email}}</li>
+                <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Id:</strong> &nbsp;  {{Auth::user()->id}}</li>
+                <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Phone Number:</strong> &nbsp;  {{Auth::user()->ph_no}}</li>
                 <li class="list-group-item border-0 ps-0 pb-0">
                   <strong class="text-dark text-sm">Social:</strong> &nbsp;
                   <a class="btn btn-facebook btn-simple mb-0 ps-1 pe-2 py-0" href="javascript:;">

@@ -42,7 +42,7 @@
       </ul>
       <ul class="navbar-nav d-lg-block d-none">
         <li class="nav-item">
-          <a href="http://127.0.0.1:8000" target="_blank" class="btn btn-sm btn-round mb-0 me-1 bg-gradient-{{ (Request::is('static-sign-up') ? 'light' : 'dark') }}">Go to Public Page</a>
+          <a href="http://127.0.0.1:8000" class="btn btn-sm btn-round mb-0 me-1 bg-gradient-{{ (Request::is('static-sign-up') ? 'light' : 'dark') }}">Go to Public Page</a>
         </li>
       </ul>
     </div>

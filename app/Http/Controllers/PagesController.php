@@ -13,10 +13,10 @@ class PagesController extends Controller
         $pproducts = Services::with('category','colors')->orderBy('created_at', 'desc')->get();
         return view('pages.home', ['products'=> $pproducts]);
     }
-    public function public()
-    {
-        return view('public');
-    }
+    // public function public()
+    // {
+    //     return view('public');
+    // }
 
     public function cart()
     {
@@ -40,6 +40,7 @@ class PagesController extends Controller
 
     public function checkout()
     {
+        
         return view('pages.checkout');
     }
     

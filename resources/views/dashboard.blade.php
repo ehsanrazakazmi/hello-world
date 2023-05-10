@@ -9,18 +9,20 @@
           <div class="row">
             <div class="col-8">
               <div class="numbers">
-                <p class="text-sm mb-0 text-capitalize font-weight-bold">Today's Collection</p>
+                <p class="text-sm mb-0 text-capitalize font-weight-bold">Totals Registered Residents</p>
                 <h5 class="font-weight-bolder mb-0">
-                  RS.53,000
-                  <span class="text-success text-sm font-weight-bolder">+15%</span>
+                  {{$users}}
+                  <span class="text-success text-sm font-weight-bolder"></span>
                 </h5>
               </div>
             </div>
-            <div class="col-4 text-end">
-              <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
-                <i class="ni ni-money-coins text-lg opacity-10" aria-hidden="true"></i>
-              </div>
-            </div>
+            <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+              <lord-icon
+                  src="https://cdn.lordicon.com/etqbfrgp.json"
+                  trigger="hover"
+                  colors="outline:#131432,primary:#92140c,secondary:#f24c00,tertiary:#b26836,quaternary:#ebe6ef"
+                  style="width:52px;height:52px">
+              </lord-icon>
           </div>
         </div>
       </div>
@@ -31,18 +33,20 @@
           <div class="row">
             <div class="col-8">
               <div class="numbers">
-                <p class="text-sm mb-0 text-capitalize font-weight-bold">Today's Resident response </p>
+                <p class="text-sm mb-0 text-capitalize font-weight-bold">Available Categories </p>
                 <h5 class="font-weight-bolder mb-0">
-                  count: 200
-                  <span class="text-success text-sm font-weight-bolder">+3%</span>
+                  {{$categories}}
+                  <span class="text-success text-sm font-weight-bolder"></span>
                 </h5>
               </div>
             </div>
-            <div class="col-4 text-end">
-              <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
-                <i class="ni ni-world text-lg opacity-10" aria-hidden="true"></i>
-              </div>
-            </div>
+            <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+<lord-icon
+    src="https://cdn.lordicon.com/zvllgyec.json"
+    trigger="hover"
+    colors="primary:#121331"
+    style="width:52px;height:52px">
+</lord-icon>
           </div>
         </div>
       </div>
@@ -53,18 +57,25 @@
           <div class="row">
             <div class="col-8">
               <div class="numbers">
-                <p class="text-sm mb-0 text-capitalize font-weight-bold">New Technicians</p>
+                <p class="text-sm mb-0 text-capitalize font-weight-bold">Total Technicians</p>
                 <h5 class="font-weight-bolder mb-0">
-                  -4
-                  <span class="text-danger text-sm font-weight-bolder">-2%</span>
+                  {{$services}}
+                  <span class="text-danger text-sm font-weight-bolder"></span>
                 </h5>
               </div>
             </div>
-            <div class="col-4 text-end">
+            {{-- <div class="col-4 text-end">
               <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
                 <i class="ni ni-paper-diploma text-lg opacity-10" aria-hidden="true"></i>
               </div>
-            </div>
+            </div> --}}
+            <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+              <lord-icon
+                  src="https://cdn.lordicon.com/sbiheqdr.json"
+                  trigger="hover"
+                  colors="primary:#121331,secondary:#08a88a"
+                  style="width:52px;height:52px">
+              </lord-icon>
           </div>
         </div>
       </div>
@@ -77,16 +88,23 @@
               <div class="numbers">
                 <p class="text-sm mb-0 text-capitalize font-weight-bold">Orders Received</p>
                 <h5 class="font-weight-bolder mb-0">
-                  RS.130
-                  <span class="text-success text-sm font-weight-bolder">+5%</span>
+                  {{$orders}}
+                  <span class="text-success text-sm font-weight-bolder"></span>
                 </h5>
               </div>
             </div>
-            <div class="col-4 text-end">
+            {{-- <div class="col-4 text-end">
               <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
                 <i class="ni ni-cart text-lg opacity-10" aria-hidden="true"></i>
               </div>
-            </div>
+            </div> --}}
+            <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+              <lord-icon
+                  src="https://cdn.lordicon.com/udbbfuld.json"
+                  trigger="hover"
+                  colors="primary:#121331"
+                  style="width:52px;height:52px">
+              </lord-icon>
           </div>
         </div>
       </div>

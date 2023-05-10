@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
+class AddMessengerColorToUsers extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->boolean('is_admin')->default(0);
+            if (!Schema::hasColumn('users', 'messenger_color')) {
+                $table->string('messenger_color')->nullable();
+            }
         });
     }
 
@@ -26,7 +28,7 @@ return new class extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('is_admin');
+            $table->dropColumn('messenger_color');
         });
     }
-};
+}

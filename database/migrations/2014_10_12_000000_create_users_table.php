@@ -16,10 +16,11 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
+            $table->integer('role'); //superadmin=1, admin=2, depthead=3, 
             $table->string('password');
             $table->rememberToken();
-            $table->foreignId('current_team_id')->nullable();
             $table->string('profile_photo_path', 2048)->nullable();
+            $table->string('ph_no', 20)->nullable();
             $table->timestamps();
         });
     }

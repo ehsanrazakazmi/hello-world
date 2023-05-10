@@ -20,9 +20,12 @@ class InfoUserController extends Controller
         $attributes = request()->validate([
             'name' => ['required', 'max:50'],
             'email' => ['required', 'email', 'max:50', Rule::unique('users')->ignore(Auth::user()->id)],
-            'phone'     => ['max:50'],
-            'location' => ['max:70'],
-            'about_me'    => ['max:150'],
+            'profile_photo_path' => ['nullable', 'image', 'max:2048'], // add validation rules for profile_image
+            'ph_no' => ['required', 'max:20'],
+    
+            // 'phone'     => ['max:50'],
+            // 'location' => ['max:70'],
+            // 'about_me'    => ['max:150'],
         ]);
         if($request->get('email') != Auth::user()->email)
         {
@@ -38,15 +41,21 @@ class InfoUserController extends Controller
                 'email' => ['required', 'email', 'max:50', Rule::unique('users')->ignore(Auth::user()->id)],
             ]);
         }
+        if ($request->hasFile('profile_photo_path')) {
+            $path = $request->file('profile_photo_path')->store('public/profile_pics');
+            $path = str_replace('public/', '', $path);
+        }
         
         
-        User::where('id',Auth::user()->id)
-        ->update([
+        User::where('id',Auth::user()->id)->update([
+            
             'name'    => $attributes['name'],
-            'email' => $attribute['email'],
-            'phone'     => $attributes['phone'],
-            'location' => $attributes['location'],
-            'about_me'    => $attributes["about_me"],
+            'email' => $attributes['email'],
+            'profile_photo_path' => $path ?? Auth::user()->profile_photo_path,
+            'ph_no'    => $attributes['ph_no'],
+            // 'phone'     => $attributes['phone'],
+            // 'location' => $attributes['location'],
+            // 'about_me'    => $attributes["about_me"],
         ]);
 
 

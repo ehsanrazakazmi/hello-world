@@ -12,7 +12,7 @@
                     <h5>Confirmed Orders</h5>
                 </div>
                 <div class="card-body">
-                    <table class="table table-stripped">
+                    <table class="table table-stripped"  style="background-color: rgb(74, 48, 92)">
                         <thead>
                             <tr>
                                 <th>id</th>

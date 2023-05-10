@@ -6,7 +6,7 @@
 
     <div class="row">
         <div class="col-12">
-            <h1 class="page-title">Edit Products</h1>
+            <h1 class="page-title">Edit Category</h1>
 <div class="container">
   
               

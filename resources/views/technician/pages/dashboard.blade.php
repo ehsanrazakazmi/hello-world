@@ -8,7 +8,7 @@
             <strong>View the Orders to Change their status and update them to Transfer to Technicians...  here!</strong>
         </span>
     </div> --}}
-    <h1 class="page-title">Show</h1>
+    <h1 class="page-title">Show Order</h1>
     <div class="row">
         <div class="col-12">
             <div class="card mb-4 mx-4 p-3">
@@ -17,7 +17,7 @@
                 </div>
                 <div class="card-body px-0 pt-0 pb-2">
                     <div class="table-responsive p-0">
-                        <table class="table align-items-center mb-0" id = 'myTable' style="background-color: cadetblue"  id = 'myTable'>
+                        <table class="table align-items-center mb-0" id = 'myTable' style="background-color: rgb(74, 48, 92)"  id = 'myTable'>
                             <thead>
                                 <tr>
                                     <th>id</th>
@@ -25,6 +25,7 @@
                                     <th>email</th>
                                     <th>phone</th>
                                     <th>address</th>
+                                    <th>Category</th>
                                     <th>Status</th>
                                     <th>Action</th>
                                     <th>Accept</th>
@@ -38,6 +39,7 @@
                                     <td>{{$order->email}}</td>
                                     <td>{{$order->phone}}</td>
                                     <td>{{$order->address}}</td>
+                                    <td>{{$order->country}}</td>
                                     <td>
                                         <span class="badge bg-@if($order->status == 'accepted')success
                                              @endif

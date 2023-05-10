@@ -86,6 +86,12 @@
                     <p class="text-danger text-xs mt-2">{{ $message }}</p>
                   @enderror
                 </div>
+                <div class="mb-3">
+                  <input type="integer" class="form-control" placeholder="role" name="role" id="role" aria-label="role" aria-describedby="password-addon">
+                  @error('role')
+                    <p class="text-danger text-xs mt-2">{{ $message }}</p>
+                  @enderror
+                </div>
                 <div class="form-check form-check-info text-left">
                   <input class="form-check-input" type="checkbox" name="agreement" id="flexCheckDefault" checked>
                   <label class="form-check-label" for="flexCheckDefault">

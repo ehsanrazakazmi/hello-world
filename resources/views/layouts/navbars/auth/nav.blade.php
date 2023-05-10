@@ -44,9 +44,29 @@
             <li class="nav-item dropdown pe-2 d-flex align-items-center">
                 <a href="javascript:;" class="nav-link text-body p-0" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="fa fa-bell cursor-pointer"></i>
+                @if(Auth::user()->unreadNotifications->count() > 0)
+                        <span  style="color: black">{{ Auth::user()->unreadNotifications->count() }}</span>
+                    @endif
                 </a>
                 <ul class="dropdown-menu  dropdown-menu-end  px-2 py-3 me-sm-n4" aria-labelledby="dropdownMenuButton">
-                <li class="mb-2">
+                    @forelse (Auth::user()->notifications as $notification)
+                    <li class="mb-2">
+                    <a class="dropdown-item border-radius-md" href="javascript:;">
+                        <div class="d-flex py-1">
+                            Technician Has Accepted the order id: {{$notification->data['id']}} 
+                            
+                        </div>
+                    </a>
+                </li>
+                
+                @empty
+                <a class="dropdown-item border-radius-md" href="javascript:;">
+                    <div class="d-flex py-1">
+                       No record found
+                    </div>
+                </a>
+                    @endforelse
+                {{-- <li class="mb-2">
                     <a class="dropdown-item border-radius-md" href="javascript:;">
                     <div class="d-flex py-1">
                         <div class="my-auto">
@@ -111,7 +131,7 @@
                         </div>
                     </div>
                     </a>
-                </li>
+                </li> --}}
                 </ul>
             </li>
             </ul>

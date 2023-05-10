@@ -6,7 +6,7 @@
 
     <div class="row">
         <div class="col-12">
-            <h1 class="page-title">Edit Products</h1>
+            <h1 class="page-title">Edit Availability</h1>
 <div class="container">
     <div class="row mb-5">
         <div class="col-md-6 offser-md-3">

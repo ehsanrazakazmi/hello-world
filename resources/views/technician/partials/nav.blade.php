@@ -5,13 +5,51 @@
     </div>
     <ul>
         <li>
-            {{-- <a href="#">Dashboard</a> --}}
+            <a href="{{route('technicianpanel.introduction')}}"><script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+                <lord-icon
+                    src="https://cdn.lordicon.com/bhfjfgqz.json"
+                    trigger="hover"
+                    colors="primary:#121331"
+                    style="width:40px;height:40px">
+                </lord-icon>&nbsp;Profile</a>
+        </li>
+
+        <li>
+            <a href="{{route('technicianpanel')}}"><script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+                <lord-icon
+                    src="https://cdn.lordicon.com/lthhecik.json"
+                    trigger="hover"
+                    colors="primary:#121331,secondary:#08a88a"
+                    style="width:40px;height:40px">
+                </lord-icon>&nbsp; Orders</a>
         </li>
         <li>
-            <a href="{{route('technicianpanel')}}">Orders</a>
+            <a href="{{route('technicianpanel.confirmed')}}"><script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+                <lord-icon
+                    src="https://cdn.lordicon.com/egiwmiit.json"
+                    trigger="hover"
+                    colors="primary:#121331"
+                    style="width:40px;height:40px">
+                </lord-icon>&nbsp;Confirmed Orders</a>
         </li>
         <li>
-            <a href="{{route('technicianpanel.confirmed')}}">Confirmed Orders</a>
+            <a href="{{route('chatting')}}"><script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+                <lord-icon
+                    src="https://cdn.lordicon.com/hpivxauj.json"
+                    trigger="hover"
+                    colors="primary:#121331"
+                    style="width:40px;height:40px">
+                </lord-icon>&nbsp; Chat</a>
+
+        </li>
+        <li>
+            <a href="{{route('technicianpanel.pages.profile')}}"><script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+                <lord-icon
+                    src="https://cdn.lordicon.com/edxgdhxu.json"
+                    trigger="hover"
+                    colors="primary:#4be1ec,secondary:#cb5eee"
+                    style="width:50px;height:50px">
+                </lord-icon>&nbsp; Edit Profile</a>
         </li>
         
     </ul>

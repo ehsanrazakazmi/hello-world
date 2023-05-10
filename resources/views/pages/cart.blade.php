@@ -3,7 +3,7 @@
 @section('content')
     <header class="page-header">
         <h1>Cart</h1>
-        <h3 class="cart-amount">$12345</h3>
+        <h3 class="cart-amount"></h3>
     </header>
     @if(session()->has('success'))
     <section class="pop-up">
@@ -46,7 +46,7 @@
                                 <td>{{ $item['color']['name']}}</td>
                                 <td>${{ $item['product']['price'] / 100}}</td>
                                 <td>{{ $item['quantity']}}</td>
-                                <td>$234</td>
+                                <td>${{ $item['product']['price'] / 100}}</td>
                                 <td>
                                     <form action="{{route('removeFromCart', $key)}}" method="post">
                                         @csrf
@@ -56,11 +56,11 @@
 
                             </tr>
                             
+                            <tr class="cart-total">
+                                <td colspan="4" style="text-align:right">Total</td>
+                                <td>${{ $item['product']['price'] / 100}}</td>
+                            </tr>
                         @endforeach
-                        <tr class="cart-total">
-                            <td colspan="4" style="text-align:right">Total</td>
-                            <td>$123</td>
-                        </tr>
                             
                         @endif
                     </tbody>

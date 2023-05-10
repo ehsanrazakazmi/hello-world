@@ -8,20 +8,22 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
+use App\Models\User;
 
 class TestMail extends Mailable
 {
     use Queueable, SerializesModels;
-    public $details;
+    public $user;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($details)
+    public function __construct( $user)
     {
-        $this->details = $details;
+       
+        $this->user = $user;
     }
     /**
      * Build the message.
@@ -30,6 +32,7 @@ class TestMail extends Mailable
      */
     public function build()
     {
-        return $this->subject($this->details['subject'])->view('mail/mail');
+        // return $this->subject($this->details['subject'])->view('mail/mail');
+        return $this->view('emails.welcome');
     }
 }

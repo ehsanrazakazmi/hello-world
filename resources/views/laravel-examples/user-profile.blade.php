@@ -1,6 +1,7 @@
 @extends('layouts.user_type.auth')
 
 @section('content')
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
 <div>
     <div class="container-fluid">
@@ -11,7 +12,7 @@
             <div class="row gx-4">
                 <div class="col-auto">
                     <div class="avatar avatar-xl position-relative">
-                        <img src="../assets/img/bruce-mars.jpg" alt="..." class="w-100 border-radius-lg shadow-sm">
+                        <img src="{{ asset('storage/'.Auth::user()->profile_photo_path) }}" alt="..." class="w-100 border-radius-lg shadow-sm">
                         <a href="javascript:;" class="btn btn-sm btn-icon-only bg-gradient-light position-absolute bottom-0 end-0 mb-n2 me-n2">
                             <i class="fa fa-pen top-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit Image"></i>
                         </a>
@@ -20,10 +21,11 @@
                 <div class="col-auto my-auto">
                     <div class="h-100">
                         <h5 class="mb-1">
-                            {{ __('Shahbaz Ali') }}
+                            {{Auth::user()->name}}
+                            {{-- {{ __('Shahbaz Ali') }} --}}
                         </h5>
                         <p class="mb-0 font-weight-bold text-sm">
-                            {{ __(' Co-Founder') }}
+                            {{Auth::user()->email}}
                         </p>
                     </div>
                 </div>
@@ -103,7 +105,7 @@
                 <h6 class="mb-0">{{ __('Profile Information') }}</h6>
             </div>
             <div class="card-body pt-4 p-3">
-                <form action="/user-profile" method="POST" role="form text-left">
+                <form action="/user-profile" method="post" role="form text-left" enctype="multipart/form-data">
                     @csrf
                     @if($errors->any())
                         <div class="mt-3  alert alert-primary alert-dismissible fade show" role="alert">
@@ -146,13 +148,27 @@
                                 </div>
                             </div>
                         </div>
+                        
                     </div>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="user.phone" class="form-control-label">{{ __('Phone') }}</label>
+                                <label for="user.phone" class="form-control-label">{{ __('Profile Image') }}</label>
                                 <div class="@error('user.phone')border border-danger rounded-3 @enderror">
-                                    <input class="form-control" type="tel" placeholder="40770888444" id="number" name="phone" value="{{ auth()->user()->phone }}">
+                                    <input name="profile_photo_path" class="form-control" type="file" placeholder="upload your picture here" id="image" >
+                                        @error('phone')
+                                            <p class="text-danger text-xs mt-2">{{ $message }}</p>
+                                        @enderror
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="@error('user.phone')border border-danger rounded-3 @enderror">
+                                    <div class="avatar avatar-xl position-relative">
+                                        <img id="showImage"  alt="..." class="w-100 border-radius-lg shadow-sm">
+                                        <a href="javascript:;" class="btn btn-sm btn-icon-only bg-gradient-light position-absolute bottom-0 end-0 mb-n2 me-n2">
+                                            <i class="fa fa-pen top-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit Image"></i>
+                                        </a>
+                                    </div>
                                         @error('phone')
                                             <p class="text-danger text-xs mt-2">{{ $message }}</p>
                                         @enderror
@@ -161,19 +177,30 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
+                                <label for="user-email" class="form-control-label">{{ __('Phone Number') }}</label>
+                                <div class="@error('email')border border-danger rounded-3 @enderror">
+                                    <input class="form-control" value="{{ auth()->user()->ph_no }}" type="text" placeholder="03000000000" id="user-ph_no" name="ph_no">
+                                        @error('email')
+                                            <p class="text-danger text-xs mt-2">{{ $message }}</p>
+                                        @enderror
+                                </div>
+                            </div>
+                        </div>
+                        {{-- <div class="col-md-6">
+                            <div class="form-group">
                                 <label for="user.location" class="form-control-label">{{ __('Location') }}</label>
                                 <div class="@error('user.location') border border-danger rounded-3 @enderror">
                                     <input class="form-control" type="text" placeholder="Location" id="name" name="location" value="{{ auth()->user()->location }}">
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
-                    <div class="form-group">
+                    {{-- <div class="form-group">
                         <label for="about">{{ 'About Me' }}</label>
                         <div class="@error('user.about')border border-danger rounded-3 @enderror">
                             <textarea class="form-control" id="about" rows="3" placeholder="Say something about yourself" name="about_me">{{ auth()->user()->about_me }}</textarea>
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="d-flex justify-content-end">
                         <button type="submit" class="btn bg-gradient-dark btn-md mt-4 mb-4">{{ 'Save Changes' }}</button>
                     </div>
@@ -183,4 +210,16 @@
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#image').change(function(e){
+            var reader = new FileReader();
+            reader.onload = function(e){
+                $('#showImage').attr('src', e.target.result);
+            }
+            reader.readAsDataURL(e.target.files['0']);
+        });
+    });
+</script>
 @endsection

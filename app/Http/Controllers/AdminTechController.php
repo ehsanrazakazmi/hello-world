@@ -37,6 +37,7 @@ class AdminTechController extends Controller
             'category_id' => 'required',
             'colors' => 'required',
             'price' => 'required',
+            // 'rating' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
 
 
@@ -51,6 +52,7 @@ class AdminTechController extends Controller
             'title' => $request->title,
             'category_id' => $request->category_id,
             'price' => $request->price,   //* 220, for rupee to Dollars
+            // 'rating' => $request->rating,   //* 220, for rupee to Dollars
             'description' => $request->description,
             'image' => $image_name
         ]);
@@ -86,6 +88,7 @@ class AdminTechController extends Controller
         'category_id' => 'required',
         'colors' => 'required',
         'price' => 'required',
+        // 'rating' => 'required',
         'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
     ]);
     $product = Services::findOrFail($id);
@@ -100,6 +103,7 @@ class AdminTechController extends Controller
         'title' => $request->title,
         'category_id' => $request->category_id,
         'price' => $request->price * 100,   //* 220,  for rupee to Dollars
+        // 'rating' => $request->rating * 100,   //* 220,  for rupee to Dollars
         'description' => $request->description,
         'image' => $image_name
     ]);

@@ -16,7 +16,7 @@
                 </div>
                 <div class="card-body px-0 pt-0 pb-2">
                     <div class="table-responsive p-0">
-                        <table class="table align-items-center mb-0" id = 'myTable' style="background-color: cadetblue" >
+                        <table class="table align-items-center mb-0" id = 'myTable' style="background-color: rgb(65, 54, 147)" >
                             <tbody>
                                 <tr>
                                     <td>Order Id</td>

@@ -2,7 +2,7 @@
 <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 " id="sidenav-main">
   <div class="sidenav-header">
     <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
-    <a class="align-items-center d-flex m-0 navbar-brand text-wrap" href="{{ route('dashboard') }}">
+    <a class="align-items-center d-flex m-0 navbar-brand text-wrap" href="{{ route('adminpanel') }}">
         <img src="../assets/img/logo-ct.png" class="navbar-brand-img w-80 h-150" alt="...">
         
     </a>
@@ -11,7 +11,7 @@
   <div class="collapse navbar-collapse  w-auto" id="sidenav-collapse-main">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link {{ (Request::is('dashboard') ? 'active' : '') }}" href="{{ url('dashboard') }}">
+        <a class="nav-link {{ (Request::is('dashboard') ? 'active' : '') }}" href="{{ url('/adminpanel') }}">
           <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
             <svg width="12px" height="12px" viewBox="0 0 45 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
               <title>shop </title>
@@ -59,36 +59,86 @@
       </li>
       <li class="nav-item pb-2">
         <a class="nav-link {{ (Request::is('user-management') ? 'active' : '') }}" href="{{ route('adminpanel.technicians') }}">
-            <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+            {{-- <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                 <i style="font-size: 1rem;" class="fas fa-lg fa-list-ul ps-2 pe-2 text-center text-dark {{ (Request::is('user-management') ? 'text-white' : 'text-dark') }} " aria-hidden="true"></i>
-            </div>
+            </div> --}}
+            <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+            <lord-icon
+                src="https://cdn.lordicon.com/sbiheqdr.json"
+                trigger="hover"
+                colors="primary:#121331,secondary:#08a88a"
+                style="width:40px;height:40px">
+            </lord-icon>
             <span class="nav-link-text ms-1">Technician </span>
         </a>
       </li>
       <li class="nav-item pb-2">
         <a class="nav-link {{ (Request::is('user-management') ? 'active' : '') }}" href="{{route('adminpanel.categories')}}">
-            <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+            {{-- <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                 <i style="font-size: 1rem;" class="fas fa-lg fa-list-ul ps-2 pe-2 text-center text-dark {{ (Request::is('user-management') ? 'text-white' : 'text-dark') }} " aria-hidden="true"></i>
-            </div>
+            </div> --}}
+            <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+            <lord-icon
+                src="https://cdn.lordicon.com/aqajnirr.json"
+                trigger="hover"
+                colors="primary:#121331,secondary:#08a88a"
+                style="width:40px;height:40px">
+            </lord-icon>
             <span class="nav-link-text ms-1">Category</span>
         </a>
       </li>
       <li class="nav-item pb-2">
         <a class="nav-link {{ (Request::is('user-management') ? 'active' : '') }}" href="{{route('adminpanel.availability')}}">
-            <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+            {{-- <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                 <i style="font-size: 1rem;" class="fas fa-lg fa-list-ul ps-2 pe-2 text-center text-dark {{ (Request::is('user-management') ? 'text-white' : 'text-dark') }} " aria-hidden="true"></i>
-            </div>
+            </div> --}}
+            <lord-icon
+                src="https://cdn.lordicon.com/kbtmbyzy.json"
+                trigger="hover"
+                colors="primary:#121331,secondary:#08a88a"
+                style="width:40px;height:40px">
+            </lord-icon>
             <span class="nav-link-text ms-1">Availability</span>
         </a>
       </li>
       <li class="nav-item pb-2">
         <a class="nav-link {{ (Request::is('user-management') ? 'active' : '') }}" href="{{route('mail.create')}}">
+            {{-- <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                <i style="font-size: 1rem;" class="fas fa-lg fa-list-ul ps-2 pe-2 text-center text-dark {{ (Request::is('user-management') ? 'text-white' : 'text-dark') }} " aria-hidden="true"></i>
+            </div> --}}
+            <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+            <lord-icon
+                src="https://cdn.lordicon.com/rhvddzym.json"
+                trigger="hover"
+                colors="primary:#121331,secondary:#08a88a"
+                style="width:40px;height:40px">
+            </lord-icon>
+            <span class="nav-link-text ms-1">Email</span>
+        </a>
+      </li>
+      <li class="nav-item pb-2">
+        <a class="nav-link {{ (Request::is('user-management') ? 'active' : '') }}" href="{{route('msgs')}}">
+            {{-- <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                <i style="font-size: 1rem;" class="fas fa-lg fa-list-ul ps-2 pe-2 text-center text-dark {{ (Request::is('user-management') ? 'text-white' : 'text-dark') }} " aria-hidden="true"></i>
+            </div> --}}
+            <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+            <lord-icon
+                src="https://cdn.lordicon.com/zpxybbhl.json"
+                trigger="hover"
+                colors="primary:#121331,secondary:#08a88a"
+                style="width:40px;height:40px">
+            </lord-icon>
+            <span class="nav-link-text ms-1">Public Messeges</span>
+        </a>
+      </li>
+      {{-- <li class="nav-item pb-2">
+        <a class="nav-link {{ (Request::is('user-management') ? 'active' : '') }}" href="{{route('chat')}}">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                 <i style="font-size: 1rem;" class="fas fa-lg fa-list-ul ps-2 pe-2 text-center text-dark {{ (Request::is('user-management') ? 'text-white' : 'text-dark') }} " aria-hidden="true"></i>
             </div>
-            <span class="nav-link-text ms-1">Email Tech</span>
+            <span class="nav-link-text ms-1">Chat</span>
         </a>
-      </li>
+      </li> --}}
       <li class="nav-item mt-2">
         <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Traffic Handling</h6>
       </li>
@@ -265,14 +315,14 @@
       </li>
     </ul>
   </div>
-  <div class="sidenav-footer mx-3 ">
+  <div class="sidenav-footer mx-3 mt-7 ">
     <div class="card card-background shadow-none card-background-mask-secondary" id="sidenavCard">
       <div class="full-background" style="background-image: url('../assets/img/curved-images/comp-portal-bg.PNG')"></div>
       <div class="card-body text-start p-3 w-100">
         
         <div class="docs-info">
           <p class="text-xs font-weight-bold">check and response to residents complaints</p>
-          <a href="/documentation/getting-started/overview.html" target="_blank" class="btn btn-white btn-sm w-100 mb-0">complaint portal</a>
+          <a href="{{route('chatting')}}" target="_blank" class="btn btn-white btn-sm w-100 mb-0">complaint portal</a>
         </div>
       </div>
     </div>
